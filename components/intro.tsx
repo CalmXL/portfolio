@@ -3,6 +3,10 @@
 import Image from 'next/image';
 import React from 'react';
 import { motion } from 'framer-motion';
+import Link from 'next/link';
+import { BsArrowRight, BsLinkedin } from 'react-icons/bs';
+import { HiDownload } from 'react-icons/hi';
+import { FaGithubSquare } from 'react-icons/fa';
 
 export default function Intro() {
   return (
@@ -52,6 +56,44 @@ export default function Intro() {
         building <span className="italic">sites & apps</span>. My focus is{' '}
         <span className="underline">React (Next.js)</span>.
       </motion.h1>
+
+      <motion.div
+        className="flex flex-col sm:flex-row gap-2 justify-center items-center"
+        initial={{ opacity: 0, y: 100 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{
+          delay: 0.2,
+        }}>
+        <Link
+          href="#contact"
+          className="group bg-gray-900 p-4 text-white flex items-center rounded-full gap-2 outline-none focus:scale-110 hover:scale-110 hover:bg-gray-950 active:scale-105 transition cursor-pointer">
+          Contact me here
+          <BsArrowRight className="opacity-70 group-hover:translate-x-1 transition" />
+        </Link>
+
+        <a
+          href="/CV.pdf"
+          className="group bg-white p-4 text-gray-700 flex items-center rounded-full gap-2 focus:scale-110 hover:scale-110 active:scale-105 transition cursor-pointer border border-black/10"
+          download>
+          Download CV
+          <HiDownload className="opacity-70 group-hover:translate-y-1 transition" />
+        </a>
+
+        <a
+          href="https://www.linkedin.com"
+          target="_blank"
+          className="bg-white text-gray-900 flex items-center rounded-full px-7 p-4 gap-2 text-[1.35rem] focus:scale-[1.15] hover:scale-[1.15]active:scale-105 transition cursor-pointer border border-black/10">
+          <BsLinkedin className="opacity-70" />
+        </a>
+
+        <a
+          href="https://github.com/CalmXL/portfolio"
+          target="_blank"
+          className="bg-white text-gray-900 flex items-center rounded-full px-7 p-4 gap-2 text-[1.35rem] focus:scale-[1.15] hover:scale-[1.15]active:scale-105 transition cursor-pointer border border-black/10">
+          <FaGithubSquare />
+        </a>
+      </motion.div>
     </section>
   );
 }
+3;
