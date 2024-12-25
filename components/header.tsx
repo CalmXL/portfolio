@@ -7,8 +7,6 @@ import Link from 'next/link';
 import clsx from 'clsx';
 
 export default function Header() {
-  const [activeSection, setActiveAction] = useState('Home');
-
   return (
     <header className="z-[999] relative">
       <motion.div
